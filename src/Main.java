@@ -7,18 +7,13 @@ public class Main {
 
         String original = "Привет, мир";
         String cipher = "евирпим, тр";
-        String cipherTest = "тевирП";
         String longString = "Привет, мир! Этот код умеет переворачивать строки и шифровать сообщение =)";
         String longReversedString = "евирПим ,ттЭ !рок тоему деп тероверавичатс ьт икорфиш итавороос ьинещб)= е";
 
         List<String> result = splitToSubstrings(longReversedString);
-//        System.out.println(result);
 
         String resultText = reverseStrings(result);
         System.out.println(resultText);
-
-//        System.out.println(decipher(cipherTest));
-
 
     }
 
@@ -43,7 +38,7 @@ public class Main {
         List<String> reversedlist = new ArrayList<>();
 
         for (String string : strings) {
-            reversedlist.add(decipher(string));
+            reversedlist.add(decryptStrings(string));
         }
 
         String result = "";
@@ -56,7 +51,7 @@ public class Main {
     }
 
 
-    private static String decipher(String string) {
+    private static String decryptStrings(String string) {
 
         int length = string.length();
 
