@@ -7,10 +7,10 @@ public class DataAnalysis {
 
     public static String startAnalysis() {
 
-        Stack<Integer> allEarthquakes = checkForEarthquakes();
+        Stack<Integer> registeredEarthquakes = checkForEarthquakes();
 
         Stack<Integer> dangerousEarthquakes = new Stack<>();
-        for (Integer earthquake : allEarthquakes) {
+        for (Integer earthquake : registeredEarthquakes) {
             if (earthquake > 3) {
                 dangerousEarthquakes.push(earthquake);
             }
@@ -34,12 +34,12 @@ public class DataAnalysis {
 
         int earthquakesPerDay = random.nextInt(0, 20);
 
-        Stack<Integer> allEarthquakes = new Stack<>();
+        Stack<Integer> earthquakes = new Stack<>();
         for (int i = 0; i < earthquakesPerDay; i++) {
-            allEarthquakes.push(random.nextInt(0, 7));
+            earthquakes.push(random.nextInt(0, 7));
         }
 
-        return allEarthquakes;
+        return earthquakes;
     }
 
 }
