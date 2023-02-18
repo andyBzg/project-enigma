@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class StringEncrypt {
 
-    public static List<String> splitToSubstrings(String string) {
+    public static String encrypt(String string) {
 
         int substringStep = 5;
         int length = string.length();
@@ -17,11 +17,13 @@ public class StringEncrypt {
             splittedStrings.add(string.substring(i, Math.min(length, i + substringStep)));
         }
 
-        return splittedStrings;
+        String encryptedString = buildEncryptedString(splittedStrings);
+
+        return encryptedString;
     }
 
 
-    public static String buildEncryptedString(List<String> strings) {
+    private static String buildEncryptedString(List<String> strings) {
 
         List<String> reversedStrings = new ArrayList<>();
 
@@ -39,32 +41,25 @@ public class StringEncrypt {
     }
 
 
-    public static String reverseStrings(String string) {
+    private static String reverseStrings(String string) {
 
         int length = string.length();
 
-        List<Character> list = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            list.add(string.charAt(i));
-        }
-
         Stack<Character> stack = new Stack<>();
-        for (Character character : list) {
-            stack.push(character);
+        for (int i = 0; i < length; i++) {
+            stack.push(string.charAt(i));
         }
 
-        List<Character> reversedSubstrings = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++) {
+        List<Character> inversion = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
             char element = stack.pop();
-            reversedSubstrings.add(element);
+            inversion.add(element);
         }
 
         String resultStr = "";
-        for (Character character : reversedSubstrings) {
+        for (Character character : inversion) {
             resultStr += character;
         }
-
         return resultStr;
     }
 }

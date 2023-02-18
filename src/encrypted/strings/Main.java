@@ -10,9 +10,8 @@ public class Main {
         String originalString = "Привет, мир! Этот код умеет переворачивать строки и шифровать сообщение =)";
         String encryptedString = "евирПим ,ттЭ !рок тоему деп тероверавичатс ьт икорфиш итавороос ьинещб)= е";
 
-        List<String> substrings = StringEncrypt.splitToSubstrings(encryptedString);
 
-        String resultText = StringEncrypt.buildEncryptedString(substrings);
+        String resultText = StringEncrypt.encrypt(encryptedString);
         System.out.println(resultText);
 
     }
